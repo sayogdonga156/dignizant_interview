@@ -24,21 +24,21 @@ const store = createStore(persistedReducer, enhancer);
 
 const persistor = persistStore(store);
 
-const getSingleUser = async () => {
-  try {
-    const user = await axiosClient.get(
-      `/admin/${localStorage.getItem("adminId")}`
-    );
-    // console.log(user.data.user);
-    store.dispatch({ type: "LOGIN", payload: user.data.user });
-  } catch (error) {
-    localStorage.removeItem("adminId");
-    // console.error("Error fetching single user:", error);
-  }
-};
+// const getSingleUser = async () => {
+//   try {
+//     const user = await axiosClient.get(
+//       `/admin/${localStorage.getItem("adminId")}`
+//     );
+//     // console.log(user.data.user);
+//     store.dispatch({ type: "LOGIN", payload: user.data.user });
+//   } catch (error) {
+//     localStorage.removeItem("adminId");
+//     // console.error("Error fetching single user:", error);
+//   }
+// };
 
-if (localStorage.getItem("adminId")) {
-  getSingleUser();
-}
+// if (localStorage.getItem("adminId")) {
+//   getSingleUser();
+// }
 
 export { store, persistor };

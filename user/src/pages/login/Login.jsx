@@ -27,8 +27,8 @@ const Login = () => {
       dispatch(clearErrors());
     }
     if (isAuth) {
-      localStorage.setItem("userId", user._id);
-      localStorage.setItem("token", user.token);
+      localStorage.setItem("userId", user?._id);
+      localStorage.setItem("token", user?.token);
       navigate("/home");
     }
     // eslint-disable-next-line
