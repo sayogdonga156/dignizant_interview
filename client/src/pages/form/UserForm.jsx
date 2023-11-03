@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 import Navbar from "../Navbar/Navbar";
 import {
   Button,
@@ -50,6 +51,8 @@ const UserForm = () => {
         response,
       };
     });
+    toast.success("Form submited successfully")
+    alert("please check console for answers")
     console.log(responsesWithMeta);
   };
 
@@ -145,6 +148,18 @@ const UserForm = () => {
         <form onSubmit={handleFormSubmit} className="p-5">
           {renderFormFields()}
         </form>
+        <ToastContainer
+                  position="top-center"
+                  autoClose={700}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  pauseOnHover
+                  theme="light"
+                />
       </div>
     </>
   );

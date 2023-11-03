@@ -83,6 +83,7 @@ const Login = () => {
                       <label className="block font-medium">Email address</label>
                       <div className="mt-1">
                         <input
+                        autoComplete="off"
                           name="email"
                           type="email"
                           onChange={handleChange}
